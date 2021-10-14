@@ -3,15 +3,18 @@
 using namespace std;
 
 bool eh_primo(int x){
-    bool ver = true;
+    int div = 0;
 
-    for (int c = 2; c < x; c++){
+    for (int c = 1; c <= x; c++){
         if (x % c == 0){
-            ver = false;
+            div++;
         }
     }
-
-    return ver;
+    if (div == 2){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 
