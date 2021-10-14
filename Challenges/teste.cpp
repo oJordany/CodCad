@@ -4,7 +4,11 @@ using namespace std;
 
 int main(){
     int t;
-    for (int c = 5; c < 5; c++)
-        cin >> t;
+    string l;
+    l = "eita ta doido";
+    l[0] -= 32;
+    l[5] -= 32;
+    l[8] -= 32;
+    cout << l << endl;
     return 0;
 }
