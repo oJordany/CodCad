@@ -16,6 +16,9 @@ int ordenaPeloId(piloto a, piloto b){
 }
 
 int ordenaPelosPontos(piloto a, piloto b){
+    if (a.pontos == b.pontos){
+        return a.id < b.id;
+    }
     return a.pontos > b.pontos;
 }
 
@@ -37,8 +40,8 @@ int main(){
         }
 
         cin >> S;
-        // limpando TotPont na parte dos pontos e do id
         for (int i = 0; i < S; i++){
+            // limpando TotPont na parte dos pontos e do id
             for (int i = 0; i < P; i++){
                 TotPont[i].pontos = TotPont[i].id = 0;
             }
