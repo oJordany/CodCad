@@ -37,6 +37,7 @@ int main(){
         }
 
         cin >> S;
+        // limpando TotPont na parte dos pontos e do id
         for (int i = 0; i < S; i++){
             for (int i = 0; i < P; i++){
                 TotPont[i].pontos = TotPont[i].id = 0;
@@ -65,7 +66,7 @@ int main(){
                 for (int c = 0; c < G; c++){
                     TotPont[i].pontos += matriz[c][i].pontos;       
                     TotPont[i].id = matriz[c][i].id;
-                    matriz[c][i].pontos = 0;
+                    matriz[c][i].pontos = 0;        //limpando a parte dos pontos da matriz
                 }
             }
 
@@ -73,7 +74,7 @@ int main(){
             sort(TotPont, TotPont+P, ordenaPelosPontos);
 
             //Print do Id do(s) piloto(s) com mais pontos
-            for (int i = 0; i <= K; i++){
+            for (int i = 0; i < P; i++){
                 if (TotPont[i].pontos == TotPont[0].pontos){
                     cout << TotPont[i].id << " ";
                 }
