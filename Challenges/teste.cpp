@@ -2,13 +2,11 @@
 
 using namespace std;
 
+string test[5];
+
+
+
 int main(){
-    int t;
-    string l;
-    l = "eita ta doido";
-    l[0] -= 32;
-    l[5] -= 32;
-    l[8] -= 32;
-    cout << l << endl;
+    cout << "\\";
     return 0;
 }
