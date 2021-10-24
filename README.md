@@ -11,3 +11,4 @@
 ---
 ### 🏆 **URI**
 * 📔| Há uma pasta cujo nome é **FirstContest_CC** que contém algumas resoluções do primeiro contest que eu fiz no URI
+* 📔| Há também uma pasta cujo nome é **Introducao_a_est_dados** que contém resoluções de desafios relacionados à estrutura de dados, que eu fiz no URI 
