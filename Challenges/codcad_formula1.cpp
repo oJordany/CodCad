@@ -23,7 +23,7 @@ int ordenaPelosPontos(piloto a, piloto b){
 }
 
 int main(){
-    int G, P, S, K, Ki;
+    int G, P, S, K, Ki, cont = 0;
     piloto matriz[105][105];                    //A 1ª dimensão da matriz é a quantidade de grandes prêmios e a segunda contém os pilotos
     piloto TotPont[105];                        //Vetor que recebe o total das pontuações de cada piloto
     
@@ -79,9 +79,15 @@ int main(){
             //Print do Id do(s) piloto(s) com mais pontos
             for (int i = 0; i < P; i++){
                 if (TotPont[i].pontos == TotPont[0].pontos){
-                    cout << TotPont[i].id << " ";
+                    cont++;
+                    if (cont == 1){
+                        cout << TotPont[i].id;
+                    }else{
+                        cout << " " << TotPont[i].id;
+                    }
                 }
             }
+            cont = 0;
             cout << endl;
         }
     }
