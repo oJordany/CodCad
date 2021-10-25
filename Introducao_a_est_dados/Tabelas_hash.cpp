@@ -33,6 +33,9 @@ int main(){
                 }
             }
         }
+        if (i < N-1){
+            cout << endl;
+        }
         for (int i = 0; i < M; i++){
             for (int c = 0; c < 205; c++){
                 if (enderecos[i][c] == 0){
@@ -41,7 +44,6 @@ int main(){
                 enderecos[i][c] = 0;
             }
         }
-        cout << endl;
     }
     return 0;
 }
