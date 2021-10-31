@@ -3,47 +3,43 @@
 
 using namespace std;
 
-int x[1000000];
-int aux[1000];
-int resultado[1000];
+int I[1005], Xi[1005][1005], saida[1005];
 
-int main() {
-    int n = 0, c = 0, p = 0, i = 0;
-    int j = 0, k = 0, count = 0, total = 0, validacao = 0;
-    
-    cin >> n >> c;
-    
-    for(j = 0; j < c; j++) {
-        cin >> p >> i;
-        aux[j] = p;
-        for(k = total; k < total+i; k++) {
-            cin >> x[k];
+int main(){
+    int N, C, cont, ver;
+    cont = ver = 0;
+
+    cin >> N >> C;  // N → qntd de pessoas infectadas  |  C → qntd de cadeias
+
+    for (int c = 0; c < C; c++){
+        cin >> Xi[c][0] >> I[c];
+        for (int i = 1; i <= I[c]; i++){
+            cin >> Xi[c][i];
         }
-        
-        total += i;
     }
-    
-    for(j = 0; j < c; j++) {
-        for(k = 0; k < total; k++) {
-            if(x[k] == aux[j]) {
-                validacao = 1;
-                break;
+
+    saida[0] = Xi[0][0];    //a primeira posição do vetor saida é preenchida com o 1º infectado da 1ª cadeia
+
+    //verificação para checar se o 1º infectado de cada cadeia é novo
+    for (int j = C-1; j >= 0; j--){
+        for (int c = C-1; c >= 0; c--){
+            for (int i = 1; i <= I[c]; i++){
+                if (Xi[j][0] == Xi[c][i]){
+                    ver = 1;
+                    break;
+                }
             }
         }
-        
-        if(validacao == 0) {
-            resultado[count] = aux[j];
-            count++;
+        if (ver == 0){
+            cont++;
+            saida[cont] = Xi[j][0];
         }
-        
-        validacao = 0;
+        ver = 0;
     }
-    
-    sort(resultado, resultado+count);
 
-    for(j = 0; j < count; j++) {
-        cout << resultado[j] << endl;
+    sort(saida, saida+cont); 
+    for (int s = 0; s < cont; s++){
+        cout << saida[s] << endl;
     }
-	
-	return 0;
+    return 0;
 }

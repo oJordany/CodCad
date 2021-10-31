@@ -19,13 +19,16 @@ int main(){
     }
 
     //verificação para checar se o 1º infectado de cada cadeia é um infectado original
-    for (int j = C-1; j >= 0; j--){
-        for (int c = j-1; c >= 0; c--){
-            for (int i = 0; i <= I[c]; i++){
+    for (int j = 0; j < C; j++){
+        for (int c = 0; c < C; c++){
+            for (int i = 1; i <= I[c]; i++){
                 if (Xi[j][0] == Xi[c][i]){
                     ver = 1;
                     break;
                 }
+            }
+            if (ver == 1){
+                break;
             }
         }
 
